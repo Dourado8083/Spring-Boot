@@ -29,10 +29,11 @@ public class PostagemController {
 		return ResponseEntity.ok(repository.findAll());
 	}
 
-	@GetMapping("/{id}") /*
-							 * para pegar o valor que entrar ,para pegar o caminho,meio q uma variavel do
-							 * caminho,por ID
-							 */
+	/*
+	 * para pegar o valor que entrar ,para pegar o caminho,meio q uma variavel do
+	 * caminho,por ID	
+	 */
+	@GetMapping("/{id}")						
 	public ResponseEntity<Postagem> GetById(@PathVariable long id) {
 		return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 		/*
