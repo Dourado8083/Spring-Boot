@@ -1,4 +1,4 @@
-package org.generation.blogPessoal;
+package org.generation.blogPessoalTeste;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
