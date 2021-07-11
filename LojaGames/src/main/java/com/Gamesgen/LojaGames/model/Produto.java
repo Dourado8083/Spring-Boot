@@ -11,14 +11,17 @@ import javax.validation.constraints.Size;
 public class Produto {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
-private long id;
+public long id;
 @NotNull
 @Size(min = 5, max = 20)
-private String fornecedor;
+public String fornecedor;
 @NotNull
-private String Nome;
+@Size(min = 5, max = 20)
+public String titulo;
 @NotNull
-private float Precoverda;
+public String nome;
+@NotNull
+public float Precoverda;
 public long getId() {
 	return id;
 }
@@ -31,17 +34,25 @@ public String getFornecedor() {
 public void setFornecedor(String fornecedor) {
 	this.fornecedor = fornecedor;
 }
+
 public String getNome() {
-	return Nome;
+	return nome;
 }
 public void setNome(String nome) {
-	Nome = nome;
+	this.nome = nome;
 }
-public float getPrecovenda() {
+public float getPrecoverda() {
 	return Precoverda;
 }
 public void setPrecoverda(float precoverda) {
 	Precoverda = precoverda;
 }
+public String getTitulo() {
+	return titulo;
+}
+public void setTitulo(String titulo) {
+	this.titulo = titulo;
+}
+
 
 }

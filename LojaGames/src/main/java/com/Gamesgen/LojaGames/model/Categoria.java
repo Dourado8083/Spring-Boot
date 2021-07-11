@@ -12,12 +12,12 @@ import javax.validation.constraints.Size;
 	public class Categoria {
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
-		private long id;
-		private String descricao;
+		public long id;
+		public String descricao;
 		@NotNull
-		private String Tipo;
+		public String Tipo;
 		@Size(min = 10, max = 100)
-		private String titulo;
+		public String titulo;
 		public long getId() {
 			return id;
 		}
@@ -42,6 +42,6 @@ import javax.validation.constraints.Size;
 		public void setTitulo(String titulo) {
 			this.titulo = titulo;
 		}
-		
+
 	}
 
