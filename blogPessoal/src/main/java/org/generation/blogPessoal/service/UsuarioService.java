@@ -29,7 +29,7 @@ public class UsuarioService {
 		Optional<Usuario> usuario = repository.findByUsuario(user.get().getUsuario());
 		if (usuario.isPresent()) {
 			if (encoder.matches(user.get().getSenha(), usuario.get().getSenha())) {
-//ele pega 2 senha e verifica se é igaul se for ele retorna verdadeiro
+//ele pega 2 senha e verifica se é igual se for ele retorna verdadeiro
 				String auth = user.get().getUsuario() + ":" + user.get().getSenha();
 				byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
 //vai pegar um e code com base64,ai escolhe qual formato de bite você quer 
