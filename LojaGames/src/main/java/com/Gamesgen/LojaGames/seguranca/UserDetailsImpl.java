@@ -1,19 +1,17 @@
-package org.generation.blogPessoal.seguranca;
+package com.Gamesgen.LojaGames.seguranca;
+
 
 import java.util.Collection;
 import java.util.List;
 
-import org.generation.blogPessoal.model.Usuario;
+
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-public class UserDetailsImpl implements UserDetails {
+import com.Gamesgen.LojaGames.model.Usuario;
 
-	
-	
-	/**
-	 * 
-	 */
+ public class UserDetailsImpl implements UserDetails {
 	private static final long serialVersionUID = 1L;
 	private String userName;
 	private String password;
@@ -25,13 +23,12 @@ public class UserDetailsImpl implements UserDetails {
 		this.password = user.getSenha();
 	}
 
-	public UserDetailsImpl() {
-	}
+	public UserDetailsImpl() {}
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO Auto-generated method stub
-		return authorities;
+		return null;
 	}
 
 	@Override
@@ -49,25 +46,25 @@ public class UserDetailsImpl implements UserDetails {
 	@Override
 	public boolean isAccountNonExpired() {
 		// TODO Auto-generated method stub
-		return true;
+		return false;
 	}
 
 	@Override
 	public boolean isAccountNonLocked() {
 		// TODO Auto-generated method stub
-		return true;
+		return false;
 	}
 
 	@Override
 	public boolean isCredentialsNonExpired() {
 		// TODO Auto-generated method stub
-		return true;
+		return false;
 	}
 
 	@Override
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
-		return true;
+		return false;
 	}
 
 
