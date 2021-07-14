@@ -9,18 +9,13 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 public class UserDetailsImpl implements UserDetails {
 
-	
-	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private String userName;
 	private String password;
 	private List<GrantedAuthority> authorities;
 
 	public UserDetailsImpl(Usuario user) {
-
+        super();
 		this.userName = user.getUsuario();
 		this.password = user.getSenha();
 	}
@@ -43,7 +38,7 @@ public class UserDetailsImpl implements UserDetails {
 	@Override
 	public String getUsername() {
 		// TODO Auto-generated method stub
-		return null;
+		return userName;
 	}
 
 	@Override

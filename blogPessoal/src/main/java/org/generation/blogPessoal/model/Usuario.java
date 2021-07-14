@@ -24,6 +24,20 @@ public class Usuario {
 	@Size(min = 2, max = 100)
 	private String senha;
 
+
+
+	public Usuario(@NotNull @Size(min = 2, max = 100) String nome, @NotNull @Size(min = 2, max = 100) String usuario) {
+		super();
+		this.nome = nome;
+		this.usuario = usuario;
+	}
+
+
+	public Usuario() {
+		super();
+	}
+
+
 	public long getId() {
 		return id;
 	}
