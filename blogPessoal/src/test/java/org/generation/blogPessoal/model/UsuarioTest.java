@@ -3,11 +3,10 @@ package org.generation.blogPessoal.model;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Set;
-
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
-import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
+import javax.validation.Validator;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,20 +15,20 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
-public class UsuarioTest {
+ class UsuarioTest {
 	public Usuario usuario;
 	@Autowired
 	private ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
-	Validator validator = factory.getValidator();
+	Validator validator = factory.getValidator(); //para pegar erros 
 
 	@BeforeEach
-	public void start() {
-		usuario = new Usuario("Gustiz", "23333");
+	public void start() { 
+     usuario = new Usuario("Gustavo", "Xmld");
 	}
 
 	@Test
 	void testValidaAtributosNaoRetornaErro() {
-		Set<ConstraintViolation<Usuario>> validacao = validador.validate(usuario);
+		Set<ConstraintViolation<Usuario>> validacao =validator.validate(usuario);
 		assertTrue(validacao.isEmpty());
 	}
 
@@ -37,7 +36,7 @@ public class UsuarioTest {
 	void testValidaAtributosRetornaErro() {
 		Usuario usuarioErro = new Usuario();
 		usuarioErro.setNome("Gustiz");
-		Set<ConstraintViolation<Usuario>> validacao = validador.validate(usuarioErro);
+		Set<ConstraintViolation<Usuario>> validacao = validator.validate(usuarioErro);
 		assertFalse(validacao.isEmpty());
 
 	}
